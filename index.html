@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Party — tiny games, big smiles</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="home-page">
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">✦</span> Pixel Party</a>
+    <div class="header-tools"><span class="points-pill">✦ <b id="partyPoints">0</b> pts</span><button class="header-action" id="searchToggle">⌕ Search</button><button class="header-action shop-action" id="shopToggle">Shop ↗</button><button class="voice-action" id="voiceButton" aria-label="Game sound volume">♬</button></div>
+  </header>
+
+  <main class="home-main">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">WELCOME TO THE ARCADE</p>
+        <h1>Pick a game.<br /><em>Make a little magic.</em></h1>
+        <p class="hero-text">Three bite-size games for quick breaks, friendly rivalries, and maximum smiles. No downloads, no sign-ups — just play.</p>
+        <div class="hero-stats"><span><strong>03</strong> mini games</span><span><strong>∞</strong> replay value</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="spark spark-a">✦</div><div class="spark spark-b">✦</div><div class="spark spark-c">✦</div>
+        <div class="arcade-card"><span class="arcade-top">PIXEL<br />PARTY</span><span class="arcade-screen">READY<br /><b>PLAYER 1</b></span><span class="arcade-stick"></span></div>
+        <div class="floating-disc disc-one">◉</div><div class="floating-disc disc-two">✚</div>
+      </div>
+    </section>
+
+    <section class="games-section">
+      <div class="section-heading"><div><p class="eyebrow">THE PLAYLIST</p><h2>Choose your flavor</h2></div><span class="section-note">Click a card to jump in <span>↗</span></span></div>
+      <div class="game-grid">
+        <a class="game-card snake-card" href="snake.html">
+          <div class="card-art"><span class="level-tag">WORLD TOUR</span><span class="snake-preview">●—●—●—●</span><span class="snake-food-preview">🍜</span><span class="snake-globe-preview">◎</span></div>
+          <div class="card-body"><div class="card-index">01</div><h3>Country Snake</h3><p>Pick a country, choose a local animal, and chase its favorite food.</p><span class="play-link">Start journey <b>↗</b></span></div>
+        </a>
+        <a class="game-card reaction-card" href="reaction.html">
+          <div class="card-art"><span class="level-tag">QUICK REFLEXES</span><span class="reaction-target">PURPLE</span><span class="reaction-tiles"><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+          <div class="card-body"><div class="card-index">02</div><h3>Color Rush</h3><p>Find the target color before the glowing board gets faster.</p><span class="play-link">Test reflexes <b>↗</b></span></div>
+        </a>
+        <a class="game-card treasure-card" href="treasure.html">
+          <div class="card-art"><span class="level-tag">ADVENTURE MODE</span><span class="map-path"></span><span class="map-coin coin-a">●</span><span class="map-coin coin-b">●</span><span class="map-chest">🧰</span><span class="map-flag">⚑</span></div>
+          <div class="card-body"><div class="card-index">03</div><h3>Treasure Dash</h3><p>Explore, dodge traps, find the key, and unlock the chest.</p><span class="play-link">Begin adventure <b>↗</b></span></div>
+        </a>
+      </div>
+    </section>
+</main>
+  <footer class="site-footer"><span>Made for good times</span><span>Press play, share the joy ✦</span></footer>
+<div class="portal-search" id="portalSearch" hidden><input id="gameSearch" type="search" placeholder="Search games..." autocomplete="off"><div id="searchResults"></div></div>
+<div class="portal-modal" id="shopModal" hidden><div class="portal-panel shop-panel"><button class="portal-close" data-close="shopModal">×</button><p class="eyebrow">PIXEL PARTY MARKET</p><div class="shop-heading"><div><h2>Little Shop</h2><p class="portal-muted">Spend your game points on a fresh look.</p></div><span class="shop-wallet">✦ <b id="shopPoints">0</b></span></div><div class="shop-section"><p class="shop-label">CLOTHES FOR YOUR AVATAR</p><div class="shop-items" id="clothingItems"></div></div><div class="shop-section"><p class="shop-label">HAIR STUDIO</p><div class="shop-items" id="hairItems"></div></div><div class="shop-section"><p class="shop-label">BACKGROUNDS</p><div class="shop-items" id="backgroundItems"></div></div><div class="shop-section purchase-history"><p class="shop-label">PURCHASE HISTORY</p><div id="purchaseHistory"><span class="portal-muted">No purchases yet.</span></div></div></div></div>
+<div class="portal-modal" id="voiceModal" hidden><div class="portal-panel voice-panel"><button class="portal-close" data-close="voiceModal">×</button><p class="eyebrow">GAME AUDIO</p><h2>Sound level</h2><p class="portal-muted">Set the volume for Pixel Party sounds.</p><div class="volume-readout"><span>quiet</span><b id="volumeValue">70%</b><span>loud</span></div><input class="volume-slider" id="volumeSlider" type="range" min="0" max="100" value="70"><div class="volume-marks"><span>0%</span><span>50%</span><span>100%</span></div></div></div>
+<div class="avatar-modal" id="avatarModal" aria-hidden="true">
+  <div class="avatar-dialog welcome-dialog" id="avatarWelcome">
+    <button class="modal-close" id="avatarClose" aria-label="Close">×</button>
+    <div class="modal-spark">✦</div><p class="eyebrow">PIXEL PARTY PROFILE</p>
+    <h2>Let's create your<br><em>“Virtual Avatar”!</em></h2>
+    <p class="modal-copy">Make a little character to join you on every game adventure.</p>
+    <button class="primary-avatar-btn" id="avatarStart">Let's go <span>→</span></button>
+  </div>
+  <div class="avatar-dialog choose-dialog" id="avatarChoose" hidden>
+    <button class="modal-close" id="avatarChooseClose" aria-label="Close">×</button>
+    <p class="eyebrow">STEP 01 / 02</p><h2>Choose your<br><em>“Virtual Avatar's”</em></h2><p class="modal-copy">Choose a character to take with you through Pixel Party.</p>
+    <div class="avatar-options">
+      <button class="avatar-option" data-gender="boy"><span class="avatar-person boy-person"><i class="avatar-face">•ᴗ•</i><i class="avatar-shirt"></i><i class="avatar-shorts"></i></span><b>Boy</b></button>
+      <button class="avatar-option" data-gender="girl"><span class="avatar-person girl-person"><i class="avatar-face">•ᴗ•</i><i class="avatar-dress"></i></span><b>Girl</b></button>
+    </div>
+    <button class="skin-next" id="skinNext" hidden>skin <span>→</span></button>
+  </div>
+</div>
+<script src="avatar.js"></script>
+</body>
+</html>
